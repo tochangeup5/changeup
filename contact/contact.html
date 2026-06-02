@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교육 문의 | SHIFTUP</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Libre+Franklin:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../logo.png" alt="SHIFTUP">
+        </a>
+      </div>
+      <nav class="gnb">
+        <ul>
+          <li><a href="../index.html">홈</a></li>
+          <li><a href="../company/company.html">회사소개</a></li>
+          <li class="has-dropdown">
+            <a href="../program/all-program.html">프로그램</a>
+            <ul class="dropdown">
+              <li><a href="../program/all-program.html">All Program</a></li>
+              <li><a href="../program/corporate-training.html">Corporate Training</a></li>
+              <li><a href="../program/role-based-training.html">Role Based Training</a></li>
+              <li><a href="../program/global-leadership.html">Global Leadership</a></li>
+              <li><a href="../program/personal-training.html">1:1 Personal Training</a></li>
+            </ul>
+          </li>
+          <li><a href="../insights/insights.html">인사이트</a></li>
+          <li><a href="../location/location.html">위치</a></li>
+          <li class="active"><a href="contact.html">교육 문의</a></li>
+        </ul>
+      </nav>
+      <div class="auth-menu">
+        <a href="/login">로그인</a>
+        <a href="/join">회원가입</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="contact-page">
+    <!-- Sub Page Hero Section -->
+    <section class="sub-hero">
+      <div class="sub-hero-bg" style="background-image: url('https://cdn.stg.qshop.ai/1170/gallery/3d9d9c80efe611eeb7488981f0076b1a.jpg');"></div>
+      <div class="sub-hero-content">
+        <p class="sub-hero-eng">SHIFT UP</p>
+        <h1>교육 문의</h1>
+      </div>
+    </section>
+
+    <!-- Inquiry Section -->
+    <section class="contact-section">
+      <div class="contact-inner">
+        <!-- Left: intro -->
+        <div class="contact-intro">
+          <p class="contact-lead">아래 내용을 기입해주시면 담당 매니저가 최대한 신속하게 연락 드리겠습니다.</p>
+          <div class="contact-etc">
+            <span class="contact-etc-label">기타 문의</span>
+            <a href="mailto:shiftup06sys@gmail.com">shiftup06sys@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <form class="contact-form" onsubmit="alert('데모 페이지입니다. 실제 접수 기능은 서버 연동 후 동작합니다.'); return false;">
+          <h2 class="form-title">교육의뢰서</h2>
+
+          <div class="form-group">
+            <label>강의 신청 분야 <span class="req">*</span></label>
+            <select required>
+              <option value="" disabled selected>선택해주세요</option>
+              <option>기업 역량 강화 프로그램</option>
+              <option>역할 기반 트레이닝</option>
+              <option>글로벌 리더십 교육</option>
+              <option>개인 맞춤형 교육 프로그램</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>기업(기관)명 <span class="req">*</span></label>
+            <input type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label>담당자, 연락처, 이메일 주소 (제안서 배부) <span class="req">*</span></label>
+            <input type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label>희망 미팅 날짜 <span class="req">*</span></label>
+            <input type="date" required>
+          </div>
+
+          <div class="form-group">
+            <label>문의내용 <span class="req">*</span></label>
+            <textarea placeholder="교육대상/ 예상인원/ 예상기간/ 예상장소/ 예상규모" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>개인정보 수집 및 이용 동의 <span class="req">*</span></label>
+            <div class="agreement-box">
+              <p>개인정보 보호법 제30조에 따라 정보 주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리지침을 수립, 공개합니다.</p>
+              <p>&nbsp;</p>
+              <p>1. (개인정보의 처리목적) 회사는 교육 문의 접수 및 상담, 제안서 배부를 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
+              <p>&nbsp;</p>
+              <p>2. (개인정보의 처리 및 보유기간) 회사는 법령에 따른 개인정보 보유, 이용 기간 또는 정보주체로부터 개인정보를 수집 시에 동의 받은 보유, 이용 기간 내에서 개인정보를 처리, 보유합니다.</p>
+            </div>
+            <label class="checkbox-label">
+              <input type="checkbox" required>
+              동의합니다.
+            </label>
+          </div>
+
+          <button type="submit" class="form-submit">작성</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h3>SHIFT UP</h3>
+      </div>
+      <div class="footer-info">
+        <p>사업자(법인)명 : SHIFT UP</p>
+        <p>대표 : 이영선 &nbsp;&nbsp;|&nbsp;&nbsp; 대표이메일 : shiftup_kr@shiftup.com</p>
+        <p>주소 : 경기 성남시 분당구 대왕판교로 660</p>
+      </div>
+      <div class="footer-copyright">
+        <p>COPYRIGHT (C) Shift up. All Rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="../main.js"></script>
+</body>
+</html>

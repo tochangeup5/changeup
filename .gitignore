@@ -1,0 +1,22 @@
+# Dependencies (puppeteer was only used locally for scraping)
+node_modules/
+package.json
+package-lock.json
+
+# Local tooling
+.claude/
+
+# Temp / scratch files
+_*.js
+_*.json
+_*.png
+_*.html
+_*.htmlfrag
+
+# Archives / backups
+*.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log

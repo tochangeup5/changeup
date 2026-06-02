@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHIFTUP 쉬프트업</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Libre+Franklin:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="SHIFTUP">
+        </a>
+      </div>
+      <nav class="gnb">
+        <ul>
+          <li class="active"><a href="index.html">홈</a></li>
+          <li><a href="company/company.html">회사소개</a></li>
+          <li class="has-dropdown">
+            <a href="program/all-program.html">프로그램</a>
+            <ul class="dropdown">
+              <li><a href="program/all-program.html">All Program</a></li>
+              <li><a href="program/corporate-training.html">Corporate Training</a></li>
+              <li><a href="program/role-based-training.html">Role Based Training</a></li>
+              <li><a href="program/global-leadership.html">Global Leadership</a></li>
+              <li><a href="program/personal-training.html">1:1 Personal Training</a></li>
+            </ul>
+          </li>
+          <li><a href="insights/insights.html">인사이트</a></li>
+          <li><a href="location/location.html">위치</a></li>
+          <li><a href="contact/contact.html">교육 문의</a></li>
+        </ul>
+      </nav>
+      <div class="auth-menu">
+        <a href="/login">로그인</a>
+        <a href="/join">회원가입</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-bg" style="background-image: url('https://cdn.qshop.ai/55794/gallery/6e2731d06c1911f0a09787856af5d915.jpg/resize?v=w1920');"></div>
+      <div class="hero-overlay"></div>
+      
+      <div class="hero-content">
+        <div class="hero-subtitle">
+          <p>Expert Personal Training Center</p>
+        </div>
+        <div class="hero-title">
+          <h1>
+            <strong>기업 맞춤형</strong><br>
+            <strong>글로벌 인재육성 교육 플랫폼</strong><br>
+            <strong>SHIFT UP</strong>
+          </h1>
+        </div>
+        <a href="#" class="explore-btn">EXPLORE DETAILS</a>
+      </div>
+    </section>
+
+    <!-- Grid Image 1 -->
+    <section class="image-grid" id="grid1">
+      <img src="https://cdn.qshop.ai/55794/gallery/34f76940364c11f18f07f106a0f02278.jpg/resize?v=w1920" alt="ShiftUp Page 2">
+    </section>
+
+    <!-- Grid Image 2 -->
+    <section class="image-grid" id="grid2">
+      <img src="https://cdn.qshop.ai/55794/gallery/670fa910364c11f19a0863bad64e47d4.jpg/resize?v=w1920" alt="ShiftUp Page 3">
+    </section>
+
+    <!-- Grid Image 3 -->
+    <section class="image-grid" id="grid3">
+      <img src="https://cdn.qshop.ai/55794/gallery/037f89406ef811f0bfb3456b89acad7b.png/resize?v=w1920" alt="ShiftUp Page 4">
+    </section>
+
+    <!-- Slider Section -->
+    <section class="slider-section">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+             <div class="slide-content">
+                <a href="program/personal-training.html" class="slide-item">
+                  <img src="https://cdn.qshop.ai/55794/gallery/f7b1ef50736511f0bfb3456b89acad7b.jpg/resize?v=w640" alt="Personal Training">
+                </a>
+                <a href="program/role-based-training.html" class="slide-item">
+                  <img src="https://cdn.qshop.ai/55794/gallery/647648d0736511f0bfb3456b89acad7b.jpg/resize?v=w640" alt="Role Base">
+                </a>
+             </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+             <div class="slide-content">
+                <a href="program/global-leadership.html" class="slide-item">
+                  <img src="https://cdn.qshop.ai/55794/gallery/89780240736511f0a1097306a726e8dc.jpg/resize?v=w640" alt="Global Leadership">
+                </a>
+                <a href="program/personal-training.html" class="slide-item">
+                  <img src="https://cdn.qshop.ai/55794/gallery/f4c92740736511f0bfb3456b89acad7b.jpg/resize?v=w640" alt="Personal Training 2">
+                </a>
+             </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h3>SHIFT UP</h3>
+      </div>
+      <div class="footer-info">
+        <p>사업자(법인)명 : SHIFT UP</p>
+        <p>대표 : 이영선 &nbsp;&nbsp;|&nbsp;&nbsp; 대표이메일 : shiftup_kr@shiftup.com</p>
+        <p>주소 : 경기 성남시 분당구 대왕판교로 660</p>
+      </div>
+      <div class="footer-copyright">
+        <p>COPYRIGHT (C) Shift up. All Rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Static site — no build step. Netlify just publishes the repo root.
+[build]
+  publish = "."
+
+# Nicer URLs: allow /company instead of /company/company.html is optional;
+# default behavior serves the files as-is.
