@@ -88,7 +88,7 @@ ul {
 }
 
 .logo img {
-  height: 70px;
+  height: 80px;
   display: block;
   /* 최상단(어두운 배경): 로고 전체를 흰색으로 변경 */
   filter: brightness(0) invert(1);
@@ -122,7 +122,7 @@ ul {
   display: inline-flex;
   align-items: center;
   font-family: var(--font-heading-ko);
-  font-weight: 800;
+  font-weight: 400;
   font-size: 21px;
   color: var(--text-sub);
   transition: color 0.3s ease;
@@ -169,7 +169,7 @@ ul {
   padding: 11px 24px;
   font-family: var(--font-heading-ko);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text-main);
   white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease;
