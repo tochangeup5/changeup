@@ -63,6 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Programs accordion (home): single-open, click to toggle
+  const accordion = document.querySelector('.pa-accordion');
+  if (accordion) {
+    accordion.querySelectorAll('.pa-head').forEach((head) => {
+      head.addEventListener('click', () => {
+        const item = head.parentElement;
+        const isOpen = item.classList.contains('is-open');
+        accordion.querySelectorAll('.pa-item').forEach((i) => i.classList.remove('is-open'));
+        if (!isOpen) item.classList.add('is-open');
+      });
+    });
+  }
+
   // Initialize Swiper only on pages that have the slider
   if (typeof Swiper !== 'undefined' && document.querySelector('.mySwiper')) {
     new Swiper('.mySwiper', {
