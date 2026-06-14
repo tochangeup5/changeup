@@ -63,14 +63,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Programs accordion (home): single-open, click to toggle
+  // Programs accordion (home): single-open.
+  // Desktop -> open on hover and keep the last-hovered panel open.
+  // Touch/mobile -> tap to toggle.
   const accordion = document.querySelector('.pa-accordion');
   if (accordion) {
-    accordion.querySelectorAll('.pa-head').forEach((head) => {
+    const items = accordion.querySelectorAll('.pa-item');
+    const hoverable = window.matchMedia('(hover: hover) and (min-width: 901px)');
+
+    const openOnly = (item) => {
+      items.forEach((i) => i.classList.toggle('is-open', i === item));
+    };
+
+    items.forEach((item) => {
+      // Hover (desktop): switch the open panel; it stays open on mouse leave
+      item.addEventListener('mouseenter', () => {
+        if (hoverable.matches) openOnly(item);
+      });
+      // Click (mobile / general): toggle this panel
+      const head = item.querySelector('.pa-head');
       head.addEventListener('click', () => {
-        const item = head.parentElement;
         const isOpen = item.classList.contains('is-open');
-        accordion.querySelectorAll('.pa-item').forEach((i) => i.classList.remove('is-open'));
+        items.forEach((i) => i.classList.remove('is-open'));
         if (!isOpen) item.classList.add('is-open');
       });
     });
