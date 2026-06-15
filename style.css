@@ -1279,6 +1279,20 @@ ul {
   background-position: center;
 }
 
+/* Distinct background per accordion item */
+.pa-item:nth-child(1) .pa-body {
+  background-image: linear-gradient(rgba(0, 20, 48, 0.8), rgba(0, 20, 48, 0.84)), url('images/course-15.jpg');
+}
+.pa-item:nth-child(2) .pa-body {
+  background-image: linear-gradient(rgba(0, 20, 48, 0.8), rgba(0, 20, 48, 0.84)), url('images/course-6.jpg');
+}
+.pa-item:nth-child(3) .pa-body {
+  background-image: linear-gradient(rgba(0, 20, 48, 0.8), rgba(0, 20, 48, 0.84)), url('images/course-2.jpg');
+}
+.pa-item:nth-child(4) .pa-body {
+  background-image: linear-gradient(rgba(0, 20, 48, 0.8), rgba(0, 20, 48, 0.84)), url('images/course-11.jpg');
+}
+
 .pa-item.is-open .pa-body {
   max-height: 360px;
 }
@@ -1381,7 +1395,7 @@ ul {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 1100px;
+  width: 780px;
   max-width: 92vw;
   aspect-ratio: 2 / 1;
   background: url('images/worldmap.png?v=2') center / contain no-repeat;
@@ -1712,50 +1726,38 @@ ul {
 
 /* ===== All Program — intro ===== */
 .ap-intro {
-  max-width: 1100px;
+  max-width: 820px;
   margin: 0 auto;
-  padding: 30px 40px 0;
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 56px;
-  align-items: center;
-}
-.ap-intro-photo {
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-}
-.ap-intro-photo img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
+  padding: 80px 40px 0;
+  text-align: center;
 }
 .ap-quote {
   display: block;
   font-family: var(--font-logo);
-  font-size: 56px;
+  font-size: 64px;
   line-height: 0.4;
   color: var(--brand-sub);
-  margin-bottom: 18px;
+  margin-bottom: 26px;
 }
 .ap-intro-text h2 {
   font-family: var(--font-heading-ko);
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 800;
   line-height: 1.4;
   color: var(--text-main);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 .ap-intro-text h2 .accent {
   color: var(--brand-sub);
 }
 .ap-intro-text p {
   font-family: var(--font-heading-ko);
-  font-size: 15.5px;
+  font-size: 16px;
   line-height: 1.9;
   color: #5a6068;
   word-break: keep-all;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 /* All Program — core values */
@@ -1929,6 +1931,9 @@ ul {
   gap: 56px;
   align-items: stretch;
 }
+/* Photo is first in the DOM (for mobile float), but stays on the right on desktop */
+.ceo-text { order: 1; }
+.ceo-photo { order: 2; }
 .ceo-eyebrow {
   font-family: var(--font-heading-ko);
   font-size: 34px;
@@ -2349,6 +2354,9 @@ ul {
   .header-container {
     padding: 0 20px;
   }
+  .logo img {
+    height: 28px;
+  }
   .gnb ul {
     gap: 20px;
   }
@@ -2507,21 +2515,30 @@ ul {
 
   /* All Program intro / values */
   .ap-intro {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 20px 20px 0;
+    padding: 48px 20px 0;
   }
   .ap-intro-text h2 {
     font-size: 25px;
   }
+  /* Keep the 3 value circles in one row (scaled to fit) */
   .ap-values {
-    padding: 44px 20px;
-    gap: 22px;
+    padding: 40px 16px;
+    gap: 8px;
+    flex-wrap: nowrap;
   }
   .ap-value {
-    width: 200px;
-    height: 200px;
-    padding: 22px;
+    width: 31%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 12px;
+  }
+  .ap-value h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .ap-value p {
+    font-size: 10px;
+    line-height: 1.45;
   }
 
   /* All Program accordion — always expanded on touch */
@@ -2539,25 +2556,61 @@ ul {
     height: auto;
   }
   .ap-content {
-    padding: 30px 26px;
+    padding: 18px 44px 18px 22px;
+    justify-content: flex-start;
+  }
+  .ap-eng {
+    font-size: 12px;
+    margin-bottom: 2px;
   }
   .ap-title {
-    font-size: 23px;
+    font-size: 19px;
   }
   .ap-overlay {
     background: linear-gradient(90deg, rgba(0, 20, 48, 0.9), rgba(0, 20, 48, 0.7));
   }
+  /* Expand/collapse chevron */
+  .ap-panel::after {
+    content: "";
+    position: absolute;
+    right: 22px;
+    top: 26px;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid rgba(255, 255, 255, 0.85);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    z-index: 2;
+  }
+  .ap-panel.is-open::after {
+    transform: rotate(-135deg);
+  }
+  /* Collapsed by default on mobile; expand only when tapped open */
   .ap-desc,
   .ap-panel:hover .ap-desc {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .ap-panel.is-open .ap-desc {
     max-height: 200px;
     opacity: 1;
-    margin-top: 12px;
+    margin-top: 8px;
   }
   .ap-more,
   .ap-panel:hover .ap-more {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    font-size: 13px;
+  }
+  .ap-panel.is-open .ap-more {
     max-height: 30px;
     opacity: 0.95;
-    margin-top: 16px;
+    margin-top: 12px;
   }
 
   /* Program courses */
@@ -2572,14 +2625,30 @@ ul {
   }
   .course-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
+  /* Keep image-left / content-right so cards stay short, not tall */
   .course-card {
-    flex-direction: column;
+    flex-direction: row;
   }
   .course-thumb {
-    flex: 0 0 auto;
-    height: 190px;
+    flex: 0 0 38%;
+    height: auto;
+  }
+  .course-body {
+    padding: 16px 16px;
+  }
+  .course-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .course-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .course-meta {
+    padding-top: 12px;
   }
 
   /* Company page */
@@ -2590,13 +2659,13 @@ ul {
     padding: 56px 20px;
   }
   .ceo-inner {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    display: block;
   }
   .ceo-photo {
-    order: -1;
-    max-width: 320px;
-    margin: 0 auto;
+    float: right;
+    width: 150px;
+    aspect-ratio: 3 / 4;
+    margin: 4px 0 14px 18px;
   }
   .ceo-eyebrow {
     font-size: 28px;
@@ -2628,25 +2697,82 @@ ul {
     margin-left: 0;
     margin-top: 4px;
   }
+  /* Keep the 3 vision circles in a row (like desktop), scaled to fit */
   .vision-circles {
-    flex-direction: column;
+    gap: 8px;
+  }
+  .vision-circle {
+    width: 28%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 14px;
+  }
+  .vision-circle h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .vision-circle p {
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .vision-plus {
+    font-size: 20px;
   }
   .vision-statement {
     flex-direction: column;
     gap: 10px;
   }
+  .org-section {
+    padding: 56px 16px;
+  }
   .org-head h2 {
     font-size: 28px;
   }
+  .org-ceo {
+    font-size: 14px;
+    padding: 12px 30px;
+  }
+  .org-com {
+    padding: 9px 14px;
+  }
+  /* Stack the two divisions, but box each as a clear group */
   .org-divisions {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
+  }
+  .org-division {
+    width: 100%;
+    max-width: 360px;
+    background: #fff;
+    border: 1px solid #e2e8f2;
+    border-radius: 14px;
+    padding: 18px 12px 16px;
+  }
+  .org-div {
+    margin-bottom: 16px;
+    padding: 11px 24px;
+    font-size: 14px;
+  }
+  .org-depts {
+    gap: 8px;
+  }
+  .org-dept {
+    gap: 7px;
+  }
+  .org-box {
+    font-size: 12px;
+  }
+  .org-dep {
+    padding: 9px 4px;
+  }
+  .org-team {
+    padding: 9px 4px;
+    font-size: 11.5px;
   }
   .org-dep,
   .org-team {
     white-space: normal;
-    font-size: 12.5px;
   }
 
   /* Programs accordion */
@@ -2684,6 +2810,73 @@ ul {
   .sub-hero-content h1 {
     font-size: 36px;
   }
+  .logo img {
+    height: 24px;
+  }
+
+  /* Core value circles: titles only on narrow phones */
+  .ap-value {
+    width: 31%;
+    padding: 8px;
+  }
+  .ap-value h3 {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+  .ap-value p {
+    display: none;
+  }
+
+  /* Vision circles: keep the row on narrow phones, show titles only */
+  .vision-circles {
+    gap: 4px;
+    flex-wrap: nowrap;
+  }
+  .vision-circle {
+    width: 27%;
+    padding: 6px;
+  }
+  .vision-circle h3 {
+    font-size: 12px;
+    margin-bottom: 0;
+    letter-spacing: 0;
+  }
+  .vision-circle p {
+    display: none;
+  }
+  .vision-plus {
+    font-size: 14px;
+  }
+}
+
+/* Scale of Operations circles: shrink to fit narrow phones */
+@media (max-width: 600px) {
+  .scale-circles {
+    height: 232px;
+    max-width: 340px;
+  }
+  .scale-circle.c47 {
+    width: 152px;
+    height: 152px;
+    left: 24%;
+    top: 58px;
+  }
+  .scale-circle.c47 .num { font-size: 36px; }
+  .scale-circle.c32 {
+    width: 108px;
+    height: 108px;
+    right: 2%;
+    top: 16px;
+  }
+  .scale-circle.c32 .num { font-size: 24px; }
+  .scale-circle.c14 {
+    width: 96px;
+    height: 96px;
+    left: 0;
+    top: 46px;
+  }
+  .scale-circle.c14 .num { font-size: 22px; }
+  .scale-circle .cap { font-size: 10px; margin-top: 4px; }
 }
 
 /* ===== Mobile navigation (hamburger) ===== */

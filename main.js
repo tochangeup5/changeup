@@ -90,6 +90,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // All Program accordion: tap-to-expand on mobile (panels are links).
+  // collapsed tap -> open; open tap -> close; tap "자세히 보기" -> navigate.
+  const apAccordion = document.querySelector('.ap-accordion');
+  if (apAccordion) {
+    const apPanels = apAccordion.querySelectorAll('.ap-panel');
+    const apMobile = window.matchMedia('(max-width: 768px)');
+
+    apPanels.forEach((panel) => {
+      panel.addEventListener('click', (e) => {
+        if (!apMobile.matches) return; // desktop: hover preview + link
+        // When open, let the "자세히 보기" link navigate to the detail page
+        if (panel.classList.contains('is-open') && e.target.closest('.ap-more')) return;
+        e.preventDefault();
+        const willOpen = !panel.classList.contains('is-open');
+        apPanels.forEach((p) => p.classList.remove('is-open'));
+        if (willOpen) panel.classList.add('is-open');
+      });
+    });
+
+    // Reset state when leaving mobile width
+    apMobile.addEventListener('change', (e) => {
+      if (!e.matches) apPanels.forEach((p) => p.classList.remove('is-open'));
+    });
+  }
+
   // Initialize Swiper only on pages that have the slider
   if (typeof Swiper !== 'undefined' && document.querySelector('.mySwiper')) {
     new Swiper('.mySwiper', {
