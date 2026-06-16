@@ -1739,7 +1739,7 @@ ul {
   width: 100%;
   max-width: 1100px;
   aspect-ratio: 2 / 1;
-  background: url('images/worldmap.png?v=2') center / contain no-repeat;
+  background: url('images/worldmap.jpg?v=3') center / contain no-repeat;
   opacity: 0.38;
   filter: blur(0.3px);
   z-index: 0;
