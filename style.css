@@ -126,7 +126,7 @@ ul {
   display: inline-flex;
   align-items: center;
   font-family: var(--font-heading-ko);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 21px;
   color: var(--text-sub);
   transition: color 0.3s ease;
@@ -273,9 +273,12 @@ ul {
 
 .hero-title h1 {
   font-family: var(--font-heading-ko);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 60px;
   line-height: 1.2;
+}
+.hero-title h1 strong {
+  font-weight: inherit;
 }
 
 .explore-btn {
