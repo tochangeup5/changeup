@@ -1016,12 +1016,24 @@ ul {
   overflow: hidden;
 }
 
-.news-card-label {
+.news-card-meta {
   margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.news-card-label {
   font-family: var(--font-heading-ko);
   font-size: 13px;
   font-weight: 600;
   color: var(--brand-sub);
+}
+.news-card-date {
+  font-family: var(--font-heading-ko);
+  font-size: 13px;
+  font-weight: 500;
+  color: #9aa0a8;
 }
 
 /* Pagination */
