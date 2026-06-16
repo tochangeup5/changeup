@@ -29,6 +29,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--text-main);
@@ -446,6 +450,13 @@ ul {
   font-size: 22px;
   font-weight: 800;
   color: var(--text-sub);
+}
+.footer-logo-img {
+  /* Match the width of the "사업자(법인)명 : LINKA" line */
+  width: 131px;
+  height: auto;
+  /* Render the navy/blue logo as solid white for the dark footer */
+  filter: brightness(0) invert(1);
 }
 
 .footer-info p {
@@ -1042,152 +1053,98 @@ ul {
 
 /* Solutions Section (home) */
 .solutions-section {
-  background-image: linear-gradient(rgba(0, 20, 48, 0.72), rgba(0, 20, 48, 0.8)), url('images/solutions-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 100px 40px;
+  background-color: #fff;
+  padding: 90px 40px;
 }
 
 .solutions-inner {
-  max-width: 1280px;
+  max-width: 860px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 70px;
-  align-items: start;
+}
+
+.solutions-head {
+  text-align: center;
+  margin-bottom: 46px;
 }
 
 .solutions-label {
   display: inline-block;
   font-family: var(--font-heading-ko);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--brand-main);
-  margin-bottom: 18px;
+  letter-spacing: 1.5px;
+  color: var(--brand-sub);
+  margin-bottom: 14px;
 }
 
 .solutions-heading {
   font-family: var(--font-heading-ko);
-  font-size: 44px;
+  font-size: 34px;
   font-weight: 800;
   line-height: 1.25;
-  color: var(--text-sub);
-  margin-bottom: 24px;
+  color: var(--text-main);
 }
 
-.solutions-desc {
-  font-family: var(--font-heading-ko);
+.solutions-sub {
+  margin-top: 18px;
   font-size: 16px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.78);
-  margin-bottom: 28px;
+  line-height: 1.7;
+  color: #6a7180;
   word-break: keep-all;
 }
 
-.solutions-check {
+.service-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 38px;
+  gap: 18px;
 }
 
-.solutions-check li {
-  position: relative;
-  padding-left: 36px;
-  font-family: var(--font-heading-ko);
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.solutions-check li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 23px;
-  height: 23px;
-  border-radius: 50%;
-  border: 1.5px solid var(--brand-main);
-  color: var(--brand-main);
-  font-size: 12px;
+.service-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.solutions-btn {
-  display: inline-block;
-  padding: 16px 38px;
-  background-color: var(--brand-main);
-  color: var(--text-sub);
-  font-family: var(--font-heading-ko);
-  font-weight: 700;
-  font-size: 15px;
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
-}
-
-.solutions-btn:hover {
-  background-color: var(--brand-sub);
-}
-
-.solutions-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  align-items: start;
-}
-
-.solution-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 32px 28px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #f6f8fb;
+  border: 1px solid #e8edf4;
+  border-radius: 16px;
+  padding: 26px 28px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Staggered grid: push the left column down a bit */
-.solution-card:nth-child(odd) {
-  margin-top: 44px;
+.service-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(0, 20, 48, 0.08);
 }
 
-.solution-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
-}
-
-.solution-icon {
+.service-check {
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background-color: var(--brand-aux);
-  color: var(--brand-main);
-  margin-bottom: 22px;
+  background-color: var(--brand-main);
+  color: #fff;
 }
 
-.solution-icon svg {
-  width: 26px;
-  height: 26px;
+.service-check svg {
+  width: 22px;
+  height: 22px;
 }
 
-.solution-card h3 {
+.service-text h3 {
   font-family: var(--font-heading-ko);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--text-main);
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
-.solution-card p {
+.service-text p {
   font-family: var(--font-heading-ko);
-  font-size: 15px;
+  font-size: 14.5px;
   line-height: 1.7;
-  color: #777;
+  color: #6a7180;
   word-break: keep-all;
 }
 
@@ -1618,7 +1575,7 @@ ul {
 }
 .course-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
   background-color: #fff;
   border: 1px solid #eee;
@@ -1633,7 +1590,8 @@ ul {
 }
 .course-thumb {
   position: relative;
-  flex: 0 0 42%;
+  flex: 0 0 auto;
+  height: 200px;
   overflow: hidden;
   background-color: #e9edf2;
 }
@@ -1802,6 +1760,7 @@ ul {
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px 40px 100px;
+  scroll-margin-top: 90px;
 }
 .ap-head {
   text-align: center;
@@ -1833,33 +1792,30 @@ ul {
   word-break: keep-all;
 }
 
-.ap-accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.ap-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 .ap-panel {
   position: relative;
   display: block;
-  height: 120px;
-  border-radius: 14px;
+  height: 260px;
+  border-radius: 20px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
   text-decoration: none;
-  transition: height 0.45s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .ap-panel:hover {
-  height: 264px;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0, 20, 48, 0.22);
 }
 .ap-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0, 20, 48, 0.86), rgba(0, 20, 48, 0.5));
-  transition: background 0.4s ease;
-}
-.ap-panel:hover .ap-overlay {
-  background: linear-gradient(90deg, rgba(0, 20, 48, 0.92), rgba(0, 20, 48, 0.66));
+  background: linear-gradient(180deg, rgba(0, 20, 48, 0.5) 0%, rgba(0, 20, 48, 0.72) 55%, rgba(0, 20, 48, 0.95) 100%);
 }
 .ap-content {
   position: relative;
@@ -1867,54 +1823,60 @@ ul {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 48px;
+  justify-content: flex-end;
+  padding: 32px;
   color: #fff;
 }
-.ap-eng {
+.ap-tag {
+  align-self: flex-start;
+  display: inline-block;
   font-family: var(--font-heading-ko);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  opacity: 0.85;
-  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--brand-main);
+  background-color: #fff;
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 14px;
 }
 .ap-title {
   font-family: var(--font-heading-ko);
-  font-size: 27px;
+  font-size: 26px;
   font-weight: 800;
+  margin-bottom: 12px;
+}
+.ap-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
 }
 .ap-desc {
-  max-width: 640px;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  font-family: var(--font-heading-ko);
-  font-size: 15px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.9);
-  word-break: keep-all;
-  transition: max-height 0.45s ease, opacity 0.4s ease, margin-top 0.45s ease;
-}
-.ap-panel:hover .ap-desc {
-  max-height: 90px;
-  opacity: 1;
-  margin-top: 12px;
-}
-.ap-more {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
+  flex: 1;
   font-family: var(--font-heading-ko);
   font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  word-break: keep-all;
+}
+.ap-more {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-heading-ko);
+  font-size: 13px;
   font-weight: 700;
   color: #fff;
-  transition: max-height 0.45s ease, opacity 0.4s ease, margin-top 0.45s ease;
+  background-color: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 9px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
 }
 .ap-panel:hover .ap-more {
-  max-height: 30px;
-  opacity: 0.95;
-  margin-top: 16px;
+  background-color: rgba(255, 255, 255, 0.28);
 }
 
 /* ===== Company Page (coded sections) ===== */
@@ -1973,10 +1935,21 @@ ul {
   word-break: keep-all;
 }
 .ceo-sign {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
   font-family: var(--font-heading-ko);
   font-size: 16px;
   font-weight: 700;
   color: var(--text-main);
+}
+.ceo-sign img {
+  height: 60px;
+  width: auto;
+  position: relative;
+  top: -6px;
+  mix-blend-mode: multiply;
 }
 .ceo-photo {
   position: relative;
@@ -2334,12 +2307,8 @@ ul {
   .office-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .solutions-inner {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
   .solutions-heading {
-    font-size: 36px;
+    font-size: 30px;
   }
   .numbers-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2463,14 +2432,35 @@ ul {
     padding: 60px 20px;
   }
   .solutions-heading {
-    font-size: 30px;
+    font-size: 26px;
   }
-  .solutions-cards {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .solutions-sub {
+    margin-top: 14px;
+    font-size: 14px;
   }
-  .solution-card:nth-child(odd) {
-    margin-top: 0;
+  .solutions-sub br {
+    display: none;
+  }
+  .solutions-head {
+    margin-bottom: 32px;
+  }
+  .service-item {
+    padding: 20px 20px;
+    gap: 16px;
+  }
+  .service-check {
+    width: 40px;
+    height: 40px;
+  }
+  .service-check svg {
+    width: 20px;
+    height: 20px;
+  }
+  .service-text h3 {
+    font-size: 16px;
+  }
+  .service-text p {
+    font-size: 13.5px;
   }
 
   /* Scale of Operations */
@@ -2541,7 +2531,7 @@ ul {
     line-height: 1.45;
   }
 
-  /* All Program accordion — always expanded on touch */
+  /* Program cards — single column on mobile */
   .ap-section {
     padding: 20px 20px 70px;
   }
@@ -2551,66 +2541,34 @@ ul {
   .ap-head h2 {
     font-size: 26px;
   }
-  .ap-panel,
-  .ap-panel:hover {
-    height: auto;
+  .ap-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .ap-panel {
+    height: 300px;
   }
   .ap-content {
-    padding: 18px 44px 18px 22px;
-    justify-content: flex-start;
+    padding: 24px;
   }
-  .ap-eng {
+  .ap-tag {
     font-size: 12px;
-    margin-bottom: 2px;
+    padding: 6px 14px;
+    margin-bottom: 12px;
   }
   .ap-title {
-    font-size: 19px;
+    font-size: 22px;
   }
-  .ap-overlay {
-    background: linear-gradient(90deg, rgba(0, 20, 48, 0.9), rgba(0, 20, 48, 0.7));
+  .ap-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
-  /* Expand/collapse chevron */
-  .ap-panel::after {
-    content: "";
-    position: absolute;
-    right: 22px;
-    top: 26px;
-    width: 9px;
-    height: 9px;
-    border-right: 2px solid rgba(255, 255, 255, 0.85);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.85);
-    transform: rotate(45deg);
-    transition: transform 0.3s ease;
-    z-index: 2;
-  }
-  .ap-panel.is-open::after {
-    transform: rotate(-135deg);
-  }
-  /* Collapsed by default on mobile; expand only when tapped open */
-  .ap-desc,
-  .ap-panel:hover .ap-desc {
-    max-height: 0;
-    opacity: 0;
-    margin-top: 0;
+  .ap-desc {
     font-size: 13.5px;
-    line-height: 1.55;
   }
-  .ap-panel.is-open .ap-desc {
-    max-height: 200px;
-    opacity: 1;
-    margin-top: 8px;
-  }
-  .ap-more,
-  .ap-panel:hover .ap-more {
-    max-height: 0;
-    opacity: 0;
-    margin-top: 0;
-    font-size: 13px;
-  }
-  .ap-panel.is-open .ap-more {
-    max-height: 30px;
-    opacity: 0.95;
-    margin-top: 12px;
+  .ap-more {
+    align-self: flex-start;
   }
 
   /* Program courses */
@@ -2629,11 +2587,11 @@ ul {
   }
   /* Keep image-left / content-right so cards stay short, not tall */
   .course-card {
-    flex-direction: row;
+    flex-direction: column;
   }
   .course-thumb {
-    flex: 0 0 38%;
-    height: auto;
+    flex: 0 0 auto;
+    height: 180px;
   }
   .course-body {
     padding: 16px 16px;

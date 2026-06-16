@@ -43,6 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mobileQuery.matches) {
           e.preventDefault();
           dropdownParent.classList.toggle('open');
+          return;
+        }
+        // Desktop: if the "교육 프로그램" section is on this page (home),
+        // smooth-scroll to it instead of reloading the page.
+        const target = document.getElementById('programs');
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
         }
       });
     }
@@ -87,31 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
         items.forEach((i) => i.classList.remove('is-open'));
         if (!isOpen) item.classList.add('is-open');
       });
-    });
-  }
-
-  // All Program accordion: tap-to-expand on mobile (panels are links).
-  // collapsed tap -> open; open tap -> close; tap "자세히 보기" -> navigate.
-  const apAccordion = document.querySelector('.ap-accordion');
-  if (apAccordion) {
-    const apPanels = apAccordion.querySelectorAll('.ap-panel');
-    const apMobile = window.matchMedia('(max-width: 768px)');
-
-    apPanels.forEach((panel) => {
-      panel.addEventListener('click', (e) => {
-        if (!apMobile.matches) return; // desktop: hover preview + link
-        // When open, let the "자세히 보기" link navigate to the detail page
-        if (panel.classList.contains('is-open') && e.target.closest('.ap-more')) return;
-        e.preventDefault();
-        const willOpen = !panel.classList.contains('is-open');
-        apPanels.forEach((p) => p.classList.remove('is-open'));
-        if (willOpen) panel.classList.add('is-open');
-      });
-    });
-
-    // Reset state when leaving mobile width
-    apMobile.addEventListener('change', (e) => {
-      if (!e.matches) apPanels.forEach((p) => p.classList.remove('is-open'));
     });
   }
 
