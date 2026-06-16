@@ -602,7 +602,7 @@ ul {
 }
 
 .ck-content p {
-  margin: 0 0 4px;
+  margin: 0 0 16px;
 }
 
 .ck-content h2,
@@ -637,7 +637,10 @@ ul {
   line-height: 1.8;
 }
 
-.ck-content blockquote p {
+.ck-content blockquote p,
+.ck-content blockquote h2,
+.ck-content blockquote h3,
+.ck-content blockquote h4 {
   margin: 0;
 }
 
@@ -1161,394 +1164,6 @@ ul {
   line-height: 1.7;
   color: #6a7180;
   word-break: keep-all;
-}
-
-/* Programs Accordion (home) */
-.pa-section {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 90px 40px;
-}
-
-.pa-header {
-  text-align: center;
-  margin-bottom: 44px;
-}
-
-.pa-label {
-  display: inline-block;
-  font-family: var(--font-heading-ko);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--brand-main);
-  margin-bottom: 12px;
-}
-
-.pa-title {
-  font-family: var(--font-heading-ko);
-  font-size: 34px;
-  font-weight: 800;
-  color: var(--text-main);
-}
-
-.pa-accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.pa-item {
-  border: 1px solid #ececec;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: #fff;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.pa-item.is-open {
-  border-color: transparent;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09);
-}
-
-.pa-head {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 24px 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.pa-cat {
-  font-family: var(--font-heading-ko);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--brand-main);
-  background-color: var(--brand-aux);
-  padding: 6px 13px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-
-.pa-name {
-  flex: 1;
-  font-family: var(--font-heading-ko);
-  font-size: 19px;
-  font-weight: 700;
-  color: var(--text-main);
-}
-
-.pa-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.45s ease;
-  background-image: linear-gradient(rgba(0, 20, 48, 0.8), rgba(0, 20, 48, 0.84)), url('images/programs-bg.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-/* Distinct background per accordion item */
-.pa-item:nth-child(1) .pa-body {
-  background-image: linear-gradient(rgba(0, 20, 48, 0.8), rgba(0, 20, 48, 0.84)), url('images/course-15.jpg');
-}
-.pa-item:nth-child(2) .pa-body {
-  background-image: linear-gradient(rgba(0, 20, 48, 0.8), rgba(0, 20, 48, 0.84)), url('images/course-6.jpg');
-}
-.pa-item:nth-child(3) .pa-body {
-  background-image: linear-gradient(rgba(0, 20, 48, 0.8), rgba(0, 20, 48, 0.84)), url('images/course-2.jpg');
-}
-.pa-item:nth-child(4) .pa-body {
-  background-image: linear-gradient(rgba(0, 20, 48, 0.8), rgba(0, 20, 48, 0.84)), url('images/course-11.jpg');
-}
-
-.pa-item.is-open .pa-body {
-  max-height: 360px;
-}
-
-.pa-body-inner {
-  padding: 30px 30px 36px;
-}
-
-.pa-desc {
-  font-family: var(--font-heading-ko);
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 14px;
-  word-break: keep-all;
-}
-
-.pa-meta {
-  display: block;
-  font-family: var(--font-heading-ko);
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 22px;
-}
-
-.pa-link {
-  display: inline-block;
-  padding: 13px 32px;
-  background-color: var(--brand-main);
-  color: var(--text-sub);
-  border-radius: 6px;
-  font-family: var(--font-heading-ko);
-  font-weight: 700;
-  font-size: 15px;
-  transition: background-color 0.2s ease;
-}
-
-.pa-link:hover {
-  background-color: var(--brand-sub);
-}
-
-/* Desktop hover behavior is handled in main.js so the last-hovered
-   panel stays open after the cursor leaves. */
-
-/* Scale of Operations (home) */
-.scale-section {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 50px 40px 100px;
-}
-
-.scale-head {
-  text-align: center;
-  margin-bottom: 34px;
-}
-
-.scale-head .eyebrow {
-  display: block;
-  font-family: var(--font-heading-ko);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #9aa0a8;
-  margin-bottom: 6px;
-}
-
-.scale-head h2 {
-  font-family: var(--font-heading-ko);
-  font-size: 38px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: var(--text-main);
-  margin-bottom: 6px;
-}
-
-.scale-head p {
-  font-family: var(--font-heading-ko);
-  font-size: 16px;
-  color: #777;
-}
-
-.scale-head .divider {
-  width: 50px;
-  height: 2px;
-  background-color: var(--brand-main);
-  margin: 14px auto 0;
-}
-
-.scale-circles {
-  position: relative;
-  height: 330px;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.scale-circles::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 780px;
-  max-width: 92vw;
-  aspect-ratio: 2 / 1;
-  background: url('images/worldmap.png?v=2') center / contain no-repeat;
-  opacity: 0.38;
-  filter: blur(0.3px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.scale-circle {
-  position: absolute;
-  z-index: 1;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-}
-
-.scale-circle .num {
-  font-family: var(--font-heading-ko);
-  font-weight: 800;
-  line-height: 1;
-}
-
-.scale-circle .cap {
-  font-family: var(--font-heading-ko);
-  font-size: 12px;
-  margin-top: 6px;
-  opacity: 0.92;
-}
-
-.scale-circle.c47 {
-  width: 232px;
-  height: 232px;
-  background-color: var(--brand-sub);
-  left: 27%;
-  top: 86px;
-  z-index: 2;
-}
-.scale-circle.c47 .num { font-size: 52px; }
-
-.scale-circle.c32 {
-  width: 162px;
-  height: 162px;
-  background-color: #9aa3b0;
-  right: 3%;
-  top: 22px;
-  z-index: 1;
-}
-.scale-circle.c32 .num { font-size: 34px; }
-
-.scale-circle.c14 {
-  width: 142px;
-  height: 142px;
-  background-color: var(--brand-main);
-  left: 2%;
-  top: 56px;
-  z-index: 1;
-}
-.scale-circle.c14 .num { font-size: 30px; }
-
-.scale-desc {
-  font-family: var(--font-heading-ko);
-  font-size: 15px;
-  line-height: 1.8;
-  color: #666;
-  text-align: center;
-  word-break: keep-all;
-  max-width: 660px;
-  margin: 44px auto 0;
-}
-
-.scale-stats {
-  display: flex;
-  margin-top: 56px;
-  border-top: 1px solid #ededed;
-  border-bottom: 1px solid #ededed;
-}
-
-.scale-stat {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  padding: 30px 16px;
-}
-.scale-stat:not(:last-child) {
-  border-right: 1px solid #ededed;
-}
-
-.scale-stat-icon {
-  flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background-color: var(--brand-main);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.scale-stat-icon svg { width: 30px; height: 30px; }
-
-.scale-stat-text .label {
-  display: block;
-  font-family: var(--font-heading-ko);
-  font-size: 15px;
-  color: #888;
-  margin-bottom: 4px;
-}
-.scale-stat-text .value {
-  font-family: var(--font-heading-ko);
-  font-size: 30px;
-  font-weight: 800;
-  color: var(--brand-main);
-}
-.scale-stat-text .value .unit {
-  font-size: 17px;
-  font-weight: 600;
-  color: #555;
-  margin-left: 3px;
-}
-
-/* By the Numbers (home) */
-.numbers-section {
-  background-color: #f7f8fa;
-  padding: 90px 40px;
-}
-
-.numbers-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.numbers-head {
-  text-align: center;
-  margin-bottom: 56px;
-}
-.numbers-head h2 {
-  font-family: var(--font-heading-ko);
-  font-size: 34px;
-  font-weight: 800;
-  color: var(--text-main);
-  margin-bottom: 12px;
-}
-.numbers-head p {
-  font-family: var(--font-heading-ko);
-  font-size: 17px;
-  color: #777;
-}
-
-.numbers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-.number-item {
-  text-align: center;
-}
-.number-item .ni-icon {
-  display: inline-flex;
-  color: var(--brand-main);
-  margin-bottom: 18px;
-}
-.number-item .ni-icon svg { width: 50px; height: 50px; }
-.number-item .ni-value {
-  font-family: var(--font-heading-ko);
-  font-size: 34px;
-  font-weight: 800;
-  color: var(--text-main);
-  margin-bottom: 8px;
-}
-.number-item .ni-label {
-  font-family: var(--font-heading-ko);
-  font-size: 16px;
-  color: #777;
 }
 
 /* ===== Program detail — course cards ===== */
@@ -2325,10 +1940,6 @@ ul {
   .solutions-heading {
     font-size: 30px;
   }
-  .numbers-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 30px;
-  }
   .course-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2476,46 +2087,6 @@ ul {
   }
   .service-text p {
     font-size: 13.5px;
-  }
-
-  /* Scale of Operations */
-  .scale-section {
-    padding: 60px 20px;
-  }
-  .scale-head {
-    margin-bottom: 44px;
-  }
-  .scale-head h2 {
-    font-size: 28px;
-  }
-  .scale-stat-text .value {
-    font-size: 26px;
-  }
-  /* stack the 3 stats vertically on mobile */
-  .scale-stats {
-    flex-direction: column;
-  }
-  .scale-stat {
-    justify-content: flex-start;
-    padding: 22px 6px;
-  }
-  .scale-stat:not(:last-child) {
-    border-right: none;
-    border-bottom: 1px solid #ededed;
-  }
-
-  /* By the Numbers */
-  .numbers-section {
-    padding: 56px 20px;
-  }
-  .numbers-head {
-    margin-bottom: 40px;
-  }
-  .numbers-head h2 {
-    font-size: 26px;
-  }
-  .number-item .ni-value {
-    font-size: 28px;
   }
 
   /* All Program intro / values */
@@ -2747,27 +2318,6 @@ ul {
   .org-team {
     white-space: normal;
   }
-
-  /* Programs accordion */
-  .pa-section {
-    padding: 60px 20px;
-  }
-  .pa-title {
-    font-size: 26px;
-  }
-  .pa-head {
-    padding: 18px 18px;
-    gap: 12px;
-  }
-  .pa-name {
-    font-size: 16px;
-  }
-  .pa-body-inner {
-    padding: 24px 20px 28px;
-  }
-  .pa-item.is-open .pa-body {
-    max-height: 460px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -2820,36 +2370,6 @@ ul {
   .vision-plus {
     font-size: 14px;
   }
-}
-
-/* Scale of Operations circles: shrink to fit narrow phones */
-@media (max-width: 600px) {
-  .scale-circles {
-    height: 232px;
-    max-width: 340px;
-  }
-  .scale-circle.c47 {
-    width: 152px;
-    height: 152px;
-    left: 24%;
-    top: 58px;
-  }
-  .scale-circle.c47 .num { font-size: 36px; }
-  .scale-circle.c32 {
-    width: 108px;
-    height: 108px;
-    right: 2%;
-    top: 16px;
-  }
-  .scale-circle.c32 .num { font-size: 24px; }
-  .scale-circle.c14 {
-    width: 96px;
-    height: 96px;
-    left: 0;
-    top: 46px;
-  }
-  .scale-circle.c14 .num { font-size: 22px; }
-  .scale-circle .cap { font-size: 10px; margin-top: 4px; }
 }
 
 /* ===== Mobile navigation (hamburger) ===== */
