@@ -1612,120 +1612,116 @@ ul {
   max-width: 1180px;
   margin: 0 auto;
 }
-.values-title {
+/* Section heading: eyebrow + pill */
+.values-head {
   text-align: center;
-  font-family: var(--font-heading-ko);
-  font-size: 34px;
-  font-weight: 800;
-  color: var(--brand-main);
-  margin-bottom: 52px;
+  margin-bottom: 30px;
 }
-/* EMPOWERING banner */
-.cv-banner {
-  position: relative;
+.values-eyebrow {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+.values-pill {
+  display: inline-block;
   background-color: var(--brand-main);
   color: #fff;
-  border-radius: 8px;
-  padding: 22px 30px;
-  text-align: center;
-  margin-bottom: 38px;
-}
-.cv-banner-main {
   font-family: var(--font-heading-ko);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
-  letter-spacing: 0.5px;
-}
-.cv-banner-sub {
-  font-family: var(--font-heading-ko);
-  font-size: 16px;
-  font-weight: 700;
-  margin-left: 14px;
-  opacity: 0.9;
-}
-.cv-banner::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -20px;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 20px;
-  background-color: #c2cbd8;
+  padding: 12px 46px;
+  border-radius: 999px;
 }
 
-/* Connected circle cards */
-.cv-grid {
+/* Pentagon diagram with four corner values */
+.cv-diagram {
   position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.cv-corners {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
+  grid-template-columns: 1fr 1fr;
+  /* Fluid gaps: hold full size on laptops, shrink with the viewport on phones
+     so the pentagon-in-the-middle layout stays intact instead of collapsing. */
+  column-gap: clamp(112px, 34vw, 340px);
+  row-gap: clamp(150px, 23vw, 230px);
+  justify-items: center;
 }
-.cv-grid::before {
-  content: "";
-  position: absolute;
-  top: -18px;
-  left: 11.5%;
-  right: 11.5%;
-  height: 2px;
-  background-color: #c2cbd8;
-}
-.cv-item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.cv-item::before {
-  content: "";
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 18px;
-  background-color: #c2cbd8;
-}
-.cv-circle {
+.cv-value {
   position: relative;
   z-index: 2;
-  width: 86px;
-  height: 86px;
-  border-radius: 50%;
-  background: linear-gradient(150deg, var(--brand-sub), var(--brand-main));
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 18px rgba(0, 28, 69, 0.28);
-}
-.cv-circle svg {
-  width: 38px;
-  height: 38px;
-}
-.cv-card {
-  width: 100%;
-  flex: 1;
-  margin-top: -43px;
-  padding: 58px 22px 30px;
-  background-color: #fff;
-  border-radius: 14px;
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.06);
+  max-width: clamp(96px, 26vw, 250px);
   text-align: center;
 }
-.cv-card h4 {
+.cv-value h4 {
   font-family: var(--font-heading-ko);
-  font-size: 18px;
+  font-size: clamp(13px, 2vw, 19px);
   font-weight: 800;
   color: var(--brand-main);
-  margin-bottom: 12px;
+  margin-bottom: clamp(6px, 1vw, 12px);
+  word-break: keep-all;
 }
-.cv-card p {
+.cv-value p {
   font-family: var(--font-heading-ko);
-  font-size: 14.5px;
+  font-size: clamp(11.5px, 1.6vw, 14.5px);
   line-height: 1.7;
   color: #5a6068;
   word-break: keep-all;
+}
+
+/* Center pentagon (navy) over a larger pale pentagon */
+.cv-pentagon-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(100px, 30vw, 300px);
+  height: clamp(100px, 30vw, 300px);
+  z-index: 1;
+}
+.cv-pentagon-bg {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background-color: #e6edfa;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+.cv-pentagon-fg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--brand-main);
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 9%;
+}
+.cv-pentagon-main {
+  font-family: var(--font-heading-ko);
+  font-size: clamp(13px, 3.1vw, 25px);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.cv-pentagon-sub {
+  font-family: var(--font-heading-ko);
+  font-size: clamp(7.5px, 1.5vw, 13px);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-top: clamp(5px, 0.9vw, 10px);
+  padding-top: clamp(5px, 0.9vw, 10px);
+  padding-left: 6px;
+  padding-right: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 /* Vision */
@@ -1740,80 +1736,100 @@ ul {
   content: "";
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 1100px;
   aspect-ratio: 2 / 1;
   background: url('images/worldmap.jpg?v=3') center / contain no-repeat;
-  opacity: 0.38;
+  opacity: 0.42;
   filter: blur(0.3px);
+  /* Fade the map out toward the bottom */
+  -webkit-mask-image: linear-gradient(to bottom, #000 18%, transparent 88%);
+  mask-image: linear-gradient(to bottom, #000 18%, transparent 88%);
   z-index: 0;
   pointer-events: none;
 }
+/* Heading + intro at the top-left */
+.vision-head {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.vision-head h2 {
+  font-family: var(--font-heading-ko);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--brand-main);
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.vision-head p {
+  font-family: var(--font-heading-ko);
+  font-size: clamp(13px, 1.6vw, 15px);
+  line-height: 1.85;
+  color: #555;
+  max-width: 640px;
+  word-break: keep-all;
+}
+
+/* Three circles staggered into a triangle, slightly overlapping */
 .vision-circles {
   position: relative;
   z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 26px;
-  flex-wrap: wrap;
+  width: 100%;
+  max-width: 660px;
+  margin: clamp(24px, 4vw, 48px) auto 0;
+  aspect-ratio: 660 / 430;
 }
 .vision-circle {
-  width: 234px;
-  height: 234px;
+  position: absolute;
+  width: clamp(132px, 31%, 200px);
+  aspect-ratio: 1 / 1;
+  /* Size the inner text relative to the circle (cqw) so it always fits and
+     the box never has to grow taller than its width — keeps a perfect circle. */
+  container-type: inline-size;
   border-radius: 50%;
-  background: linear-gradient(150deg, var(--brand-sub), var(--brand-main));
+  /* Semi-transparent so the world map shows through */
+  background: linear-gradient(150deg, rgba(29, 68, 128, 0.8), rgba(0, 28, 69, 0.82));
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 28px;
-  box-shadow: 0 14px 34px rgba(0, 28, 69, 0.22);
+  padding: 4.5%;
+  box-shadow: 0 14px 34px rgba(0, 28, 69, 0.2);
+}
+.vision-circle--lead {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.vision-circle--grow {
+  top: 30%;
+  left: 0;
+  z-index: 2;
+}
+.vision-circle--bridge {
+  top: 42%;
+  right: 0;
+  z-index: 2;
 }
 .vision-circle h3 {
   font-family: var(--font-heading-ko);
-  font-size: 21px;
+  font-size: 12.5cqw;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 3.5cqw;
   letter-spacing: 0.5px;
 }
 .vision-circle p {
   font-family: var(--font-heading-ko);
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: 8cqw;
+  line-height: 1.5;
   opacity: 0.92;
-  word-break: keep-all;
-}
-.vision-plus {
-  font-size: 32px;
-  font-weight: 300;
-  color: var(--brand-sub);
-}
-.vision-statement {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: 28px;
-  max-width: 880px;
-  margin: 54px auto 0;
-}
-.vision-statement .vs-label {
-  flex-shrink: 0;
-  font-family: var(--font-heading-ko);
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--brand-sub);
-  padding-top: 2px;
-}
-.vision-statement p {
-  font-family: var(--font-heading-ko);
-  font-size: 15px;
-  line-height: 1.85;
-  color: #555;
   word-break: keep-all;
 }
 
@@ -2223,55 +2239,13 @@ ul {
   .ceo-lead {
     font-size: 20px;
   }
-  .values-title {
-    font-size: 26px;
-    margin-bottom: 36px;
+  .values-pill {
+    font-size: 21px;
+    padding: 10px 38px;
   }
-  .cv-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 18px;
-  }
-  .cv-grid::before,
-  .cv-item::before,
-  .cv-banner::after {
-    display: none;
-  }
-  .cv-banner {
-    margin-bottom: 50px;
-  }
-  .cv-banner-main {
-    font-size: 22px;
-  }
-  .cv-banner-sub {
-    display: block;
-    margin-left: 0;
-    margin-top: 4px;
-  }
-  /* Keep the 3 vision circles in a row (like desktop), scaled to fit */
-  .vision-circles {
-    gap: 8px;
-  }
-  .vision-circle {
-    width: 28%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    padding: 14px;
-  }
-  .vision-circle h3 {
-    font-size: 16px;
-    margin-bottom: 6px;
-  }
-  .vision-circle p {
-    font-size: 10.5px;
-    line-height: 1.5;
-  }
-  .vision-plus {
-    font-size: 20px;
-  }
-  .vision-statement {
-    flex-direction: column;
-    gap: 10px;
-  }
+  /* Keep the pentagon-in-the-middle diagram on mobile too — the clamp()-based
+     sizes shrink it to fit, so no stacking override is needed here. */
+  /* Vision circles scale via % + clamp(), so no row/stack override needed. */
   .org-section {
     padding: 56px 16px;
   }
@@ -2356,26 +2330,7 @@ ul {
     display: none;
   }
 
-  /* Vision circles: keep the row on narrow phones, show titles only */
-  .vision-circles {
-    gap: 4px;
-    flex-wrap: nowrap;
-  }
-  .vision-circle {
-    width: 27%;
-    padding: 6px;
-  }
-  .vision-circle h3 {
-    font-size: 12px;
-    margin-bottom: 0;
-    letter-spacing: 0;
-  }
-  .vision-circle p {
-    display: none;
-  }
-  .vision-plus {
-    font-size: 14px;
-  }
+  /* Vision circles scale via % + clamp(); no narrow-phone override needed. */
 }
 
 /* ===== Mobile navigation (hamburger) ===== */
